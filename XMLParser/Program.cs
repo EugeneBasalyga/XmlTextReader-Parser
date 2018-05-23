@@ -22,7 +22,7 @@ namespace XMLParser
 
         static void Main(string[] args)
         {
-
+            Console.BufferHeight = Int16.MaxValue - 1;
             Console.Write("Enter xml file path: ");
             string FilePath = Console.ReadLine();
             UserInfo userinfo = new UserInfo();
@@ -52,10 +52,10 @@ namespace XMLParser
                                     userinfo.UserName = XmlReader.ReadString();
                                 break;
                             case "skill":
-                                var tmpstr = XmlReader.ReadString();
-                                if (tmpstr == "CodeIgniter" || tmpstr == "CSS3" || tmpstr == "Sinatra")
+                                var tmp = XmlReader.ReadString();
+                                if (tmp == "CodeIgniter" || tmp == "CSS3" || tmp == "Sinatra")
                                 {
-                                    userinfo.skills.Add(tmpstr);
+                                    userinfo.skills.Add(tmp);
                                 }
                                 break;
                         }
@@ -73,10 +73,12 @@ namespace XMLParser
                 foreach (var item in userlist)
                 {
                     Console.WriteLine("Name = {0} \nid = {1}", item.UserName, item.UserId);
+                    Console.Write("Skills : ");
                     foreach (var skill in item.skills)
                     {
-                        Console.WriteLine("skill = {0}", skill);
+                        Console.Write("{0}  ", skill);
                     }
+                    Console.Write("\n");
                     Console.WriteLine();
                 }
 
@@ -85,7 +87,7 @@ namespace XMLParser
             {
                 Console.WriteLine("Error");
             }
-
+            Console.ReadLine();
         }
     }
 }

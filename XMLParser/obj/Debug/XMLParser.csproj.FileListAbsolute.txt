@@ -4,3 +4,6 @@ C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\XMLParser\XMLParser\
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\XMLParser\XMLParser\obj\Debug\XMLParser.csprojResolveAssemblyReference.cache
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\XMLParser\XMLParser\obj\Debug\XMLParser.exe
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\XMLParser\XMLParser\obj\Debug\XMLParser.pdb
+C:\Users\Eugene\Desktop\XMLParser\XMLParser\bin\Debug\XMLParser.exe.config
+C:\Users\Eugene\Desktop\XMLParser\XMLParser\obj\Debug\XMLParser.exe
+C:\Users\Eugene\Desktop\XMLParser\XMLParser\obj\Debug\XMLParser.pdb
