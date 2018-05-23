@@ -44,26 +44,18 @@ namespace XMLParser
                                 userinfo = new UserInfo();
                                 break;
                             case "uid":
-                                XmlReader.Read();
-                                if (XmlReader.NodeType == XmlNodeType.Text)
-                                {
-                                    if (userinfo != null)
-                                        userinfo.UserId = XmlReader.Value;
-                                }
+                                if (userinfo != null)
+                                    userinfo.UserId = XmlReader.ReadString();
                                 break;
                             case "name":
-                                XmlReader.Read();
-                                if (XmlReader.NodeType == XmlNodeType.Text)
-                                {
-                                    if (userinfo != null)
-                                        userinfo.UserName = XmlReader.Value;
-                                }
+                                if (userinfo != null)
+                                    userinfo.UserName = XmlReader.ReadString();
                                 break;
                             case "skill":
-                                XmlReader.Read();
-                                if (XmlReader.NodeType == XmlNodeType.Text && (XmlReader.Value == "CodeIgniter" || XmlReader.Value == "CSS3" || XmlReader.Value == "Sinatra"))
+                                var tmpstr = XmlReader.ReadString();
+                                if (tmpstr == "CodeIgniter" || tmpstr == "CSS3" || tmpstr == "Sinatra")
                                 {
-                                    userinfo.skills.Add(XmlReader.Value);
+                                    userinfo.skills.Add(tmpstr);
                                 }
                                 break;
                         }
