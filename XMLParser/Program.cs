@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.IO;
 
 namespace XMLParser
 {
@@ -70,18 +71,23 @@ namespace XMLParser
                     }
                 }
 
+                TextWriter tw = new StreamWriter("UserInfo.txt");
+
                 foreach (var item in userlist)
                 {
                     Console.WriteLine("Name = {0} \nid = {1}", item.UserName, item.UserId);
+                    tw.WriteLine("Name = {0}", item.UserName);
+                    tw.WriteLine("id = {0}", item.UserId);
                     Console.Write("Skills : ");
+                    tw.Write("Skills : ");
                     foreach (var skill in item.skills)
                     {
                         Console.Write("{0}  ", skill);
+                        tw.Write("{0}  ", skill);
                     }
-                    Console.Write("\n");
-                    Console.WriteLine();
+                    tw.WriteLine("\r\n");
+                    Console.WriteLine("\r\n");
                 }
-
             }
             catch
             {
